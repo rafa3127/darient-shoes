@@ -1,0 +1,13 @@
+@mixin responsivedesk()
+    @media ( min-width: $desk )
+        @content
+
+@mixin responsivetablet()
+    @media ( max-width: $tablet )
+        @content
+        
+@mixin responsivephone()
+    @media ( max-width: $mobile )
+        @content
+        
+    
