@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ApiConfigService } from '../api-config/api-config.service';
 
@@ -8,12 +7,14 @@ import { ApiConfigService } from '../api-config/api-config.service';
 export class AuthService {
 
   constructor(
-    private api: ApiConfigService,
-    private http: HttpClient
+    private api: ApiConfigService
   ) { }
 
   login(email,password){
-    this.http.get("http://darient-api-shoes.somee.com/users/list").subscribe(res=>{console.log(res)})
+    this.api.get('users/list').subscribe( (res)=>{
+      console.log(res)
+    }, err =>{
+      console.log(err)
+    })
   }
-
 }
