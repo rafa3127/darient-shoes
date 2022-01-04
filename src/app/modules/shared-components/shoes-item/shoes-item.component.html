@@ -1,0 +1,36 @@
+<div class="card">
+    <div [id]="'carousel'+ shoes.id" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" *ngIf="shoes.frontImage != '' || shoes.sideImage != '' || shoes.backImage != ''">
+          <div class="carousel-item active">
+            <img src="{{shoes.frontImage}}" class="d-block w-100" alt="{{shoes.brand}}">
+          </div>
+          <div class="carousel-item">
+            <img src="{{shoes.sideImage}}" class="d-block w-100" alt="{{shoes.brand}}">
+          </div>
+          <div class="carousel-item">
+            <img src="{{shoes.backImage}}" class="d-block w-100" alt="{{shoes.brand}}">
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carousel'+ shoes.id" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carousel'+ shoes.id" data-bs-slide="next">
+          <span class="carousel-control-next-icon icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    <div class="card-body">
+      <p class="card-title">{{sex.sex}} {{shoes.brand}} {{shoes.color}}</p>
+      <p class="card-text"><strong>Size:</strong> {{shoes.size}}</p>
+      <p class="card-text"><strong>Store:</strong> {{store.name}} | {{store.adress}}</p>
+      <p class="card-text"><strong>Supplier:</strong> {{supplier.name}} | {{supplier.adress}}</p>
+      <p class="card-text"><strong>Seller:</strong> {{seller.name}}</p>
+      <p class="card-text"><strong>Price:</strong> {{shoes.price}}</p>
+      <div class="container buttons">
+        <button (click)="delete(shoes.id) "><i class="bi bi-trash-fill"></i></button>
+        <button (click)="openUpdate(shoes.id)"><i class="bi bi-pencil-square"></i></button>
+      </div>
+    </div>
+  </div>

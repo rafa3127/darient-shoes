@@ -1,0 +1,14 @@
+<!-- CONTENEDOR DE BARRA Y BOTÓN DE BÚSQUEDA-->
+<div class="container">
+    <div class="col">
+        <!-- barra de búsqueda -->
+        <div class="row">
+          <input [formControl]="search" type="text" class="form-control" id="inputPassword2" placeholder="Buscar...">
+        </div>
+        <!-- botón de búsqueda -->
+        <div class="row">
+          <button class="btn btn-dark mb-3 " (click)="sendSearch()">BUSCAR</button>
+        </div>
+    </div>
+</div>
+  

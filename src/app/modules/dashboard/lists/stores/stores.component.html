@@ -1,0 +1,27 @@
+<section class="container">
+    <div class="card">
+        <div class="row">
+            <div class="col-4 header">
+                Nombre
+            </div>
+            <div class="col-5 header">
+                Localidad
+            </div>
+            <div class="col-3 header">
+                Inventario
+            </div>
+        </div>
+        <div *ngFor="let store of list" class="row">
+            <div class="col-4 info">
+                {{store.name}}
+            </div>
+            <div class="col-5 info">
+                {{store.adress}}
+            </div>
+            <div class="col-3 info">
+                {{store.shoesQty}}
+            </div>
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,45 @@
+<section class="container">
+    <div class="card">
+        <div class="row">
+            <div class="col-2 header">
+                Nombre
+            </div>
+            <div class="col-2 header">
+                Género
+            </div>
+            <div class="col-2 header">
+                Nacionalidad
+            </div>
+            <div class="col-2 header">
+                Teléfono
+            </div>
+            <div class="col-2 header">
+                Direccion
+            </div>
+            <div class="col-2 header">
+                Estatus
+            </div>
+        </div>
+        <div *ngFor="let seller of list" class="row">
+            <div class="col-2 info">
+                {{seller.name}}
+            </div>
+            <div class="col-2 info">
+                {{seller.sex}}
+            </div>
+            <div class="col-2 info">
+                {{seller.nationality}}
+            </div>
+            <div class="col-2 info">
+                {{seller.phone}}
+            </div>
+            <div class="col-2 info">
+                {{seller.adress}}
+            </div>
+            <div class="col-2 info">
+                {{seller.status? "Activo": "Inactivo"}}
+            </div>
+        </div>
+
+    </div>
+</section>

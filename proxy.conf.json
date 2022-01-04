@@ -1,0 +1,57 @@
+[{
+    "/users/*": {
+        "target": "http://darient-api-shoes.somee.com",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+},
+{
+    "/sellers/*": {
+        "target": "http://darient-api-shoes.somee.com",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+},
+{
+    "/sexes/*": {
+        "target": "http://darient-api-shoes.somee.com",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+},
+{
+    "/shoes/*": {
+        "target": "http://darient-api-shoes.somee.com",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+},
+{
+    "/stores/*": {
+        "target": "http://darient-api-shoes.somee.com",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+},
+{
+    "/suppliers/*": {
+        "target": "http://darient-api-shoes.somee.com",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+},
+{
+    "/shoestypes/*": {
+        "target": "http://darient-api-shoes.somee.com",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}
+]

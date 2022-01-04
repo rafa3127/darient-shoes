@@ -1,0 +1,3 @@
+<div class="grid">
+    <app-shoes-item *ngFor="let shoes of shoesList" [shoes]="shoes" (deleteEmmiter)="delete($event)"></app-shoes-item>
+</div>

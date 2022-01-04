@@ -1,0 +1,18 @@
+<div class="sidebar-container">
+    <div class="sidebar-logo">
+        Darient Shoes
+    </div>
+    <ul *ngFor="let page of pages" class="sidebar-navigation">
+        <li class="header">{{page.title}}</li>
+        <li *ngFor="let subPage of page.subPages">
+            <a routerLink="{{subPage.url}}" routerLinkActive="active">
+              <i class="{{subPage.icon}}" aria-hidden="true"></i> {{subPage.title}}
+            </a>
+        </li>
+    </ul>
+    
+    <button class="logOut" (click)="logOut()">
+        <i class="bi bi-box-arrow-right"></i>
+        Cerrar Sesión
+    </button>
+</div>

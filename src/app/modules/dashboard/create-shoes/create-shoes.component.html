@@ -1,0 +1,183 @@
+<section>
+    <form class="container" method="post" id="" [formGroup]="form">
+        <h3>Crear Item</h3>
+        <div *ngIf="errorMSG" class="alert alert-danger" role="alert">
+            {{errorMSG}}
+        </div>
+        
+        <div class="mb-3">
+            <div class="form-group">
+                <label class="form-label" for="brand">Marca</label>
+                <input type="text" name="brand" id="brand" class="form-control" formControlName="brand">
+            </div>
+            <div *ngIf="form.controls['brand'].invalid && (form.controls['brand'].dirty || form.controls['brand'].touched)" class="alert alert-danger" role="alert">
+                <div *ngIf="form.controls['brand'].errors['required']">
+                    Debe ingresar un nombre de Marca.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mb-3">
+            <div class="form-group">
+                <label class="form-label" for="color">Color</label>
+                <input type="text" name="color" id="color" class="form-control" formControlName="color">
+            </div>
+            <div *ngIf="form.controls['color'].invalid && (form.controls['color'].dirty || form.controls['color'].touched)" class="alert alert-danger" role="alert">
+                <div *ngIf="form.controls['color'].errors['required']">
+                    Debe ingresar un color.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mb-3">
+            <div class="form-group">
+                <label class="form-label" for="size">Talla</label>
+                <input type="number" name="size" id="size" class="form-control" formControlName="size">
+            </div>
+            <div *ngIf="form.controls['size'].invalid && (form.controls['size'].dirty || form.controls['size'].touched)" class="alert alert-danger" role="alert">
+                <div *ngIf="form.controls['size'].errors['required']">
+                    Debe ingresar una talla.
+                </div>
+            </div>
+            <div *ngIf="form.controls['size'].invalid && (form.controls['size'].dirty || form.controls['size'].touched)" class="alert alert-danger" role="alert">
+                <div *ngIf="form.controls['size'].errors['pattern']">
+                    Debe ingresar un número válido.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mb-3">
+            <div class="form-group">
+                <label class="form-label" for="frontImage">URL Imagen Frontal</label>
+                <input type="text" name="frontImage" id="frontImage" class="form-control" formControlName="frontImage">
+            </div>
+        </div>
+
+
+        <div class="mb-3">
+            <div class="form-group">
+                <label class="form-label" for="sideImage">URL Imagen Lateral</label>
+                <input type="text" name="sideImage" id="sideImage" class="form-control" formControlName="sideImage">
+            </div>
+        </div>
+
+
+        <div class="mb-3">
+            <div class="form-group">
+                <label class="form-label" for="backImage">URL Imagen Trasera</label>
+                <input type="text" name="backImage" id="backImage" class="form-control" formControlName="backImage">
+            </div>
+        </div>
+
+
+        <div class="mb-3">
+            <div class="form-group">
+                <label class="form-label" for="sexId">Género</label>
+                <select class="form-select" aria-label="Default select example" formControlName="sexId">
+                    <option selected disabled>Género</option>
+                    <option *ngFor="let sex of sexesList" value="{{sex.id}}">{{sex.sex}}</option>
+                  </select>
+            </div>
+            <div *ngIf="form.controls['sexId'].invalid && (form.controls['sexId'].dirty || form.controls['sexId'].touched)" class="alert alert-danger" role="alert">
+                <div *ngIf="form.controls['sexId'].errors['required']">
+                    Debe ingresar un género.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mb-3">
+            <div class="form-group">
+                <label class="form-label" for="storeId">Tienda</label>
+                <select class="form-select" aria-label="Default select example" formControlName="storeId">
+                    <option selected disabled>Tienda</option>
+                    <option *ngFor="let store of storesList" value="{{store.id}}">{{store.name}}</option>
+                  </select>
+            </div>
+            <div *ngIf="form.controls['storeId'].invalid && (form.controls['storeId'].dirty || form.controls['storeId'].touched)" class="alert alert-danger" role="alert">
+                <div *ngIf="form.controls['storeId'].errors['required']">
+                    Debe ingresar una Tienda.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mb-3">
+            <div class="form-group">
+                <label class="form-label" for="supplierId">Proveedor</label>
+                <select class="form-select" aria-label="Default select example" formControlName="supplierId">
+                    <option selected disabled>Proveedor</option>
+                    <option *ngFor="let supplier of suppliersList" value="{{supplier.id}}">{{supplier.name}}</option>
+                  </select>
+            </div>
+            <div *ngIf="form.controls['supplierId'].invalid && (form.controls['supplierId'].dirty || form.controls['supplierId'].touched)" class="alert alert-danger" role="alert">
+                <div *ngIf="form.controls['supplierId'].errors['required']">
+                    Debe ingresar un proveedor.
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="form-group">
+                <label class="form-label" for="sellerId">Vendedor</label>
+                <select class="form-select" aria-label="Default select example" formControlName="sellerId">
+                    <option selected disabled>Vendedor</option>
+                    <option *ngFor="let seller of sellersList" value="{{seller.id}}">{{seller.name}}</option>
+                  </select>
+            </div>
+            <div *ngIf="form.controls['supplierId'].invalid && (form.controls['supplierId'].dirty || form.controls['supplierId'].touched)" class="alert alert-danger" role="alert">
+                <div *ngIf="form.controls['supplierId'].errors['required']">
+                    Debe ingresar un proveedor.
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="form-group">
+                <label class="form-label" for="quantity">Cantidad Disponible</label>
+                <input type="number" name="quantity" id="quantity" class="form-control" formControlName="quantity">
+            </div>
+            <div *ngIf="form.controls['quantity'].invalid && (form.controls['quantity'].dirty || form.controls['quantity'].touched)" class="alert alert-danger" role="alert">
+                <div *ngIf="form.controls['quantity'].errors['required']">
+                    Debe ingresar una Cantidad Disponible.
+                </div>
+            </div>
+            <div *ngIf="form.controls['quantity'].invalid && (form.controls['quantity'].dirty || form.controls['quantity'].touched)" class="alert alert-danger" role="alert">
+                <div *ngIf="form.controls['quantity'].errors['pattern']">
+                    Debe ingresar un número válido
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="form-group">
+                <label class="form-label" for="price">Precio</label>
+                <input type="text" name="price" id="price" class="form-control" formControlName="price">
+            </div>
+            <div *ngIf="form.controls['price'].invalid && (form.controls['price'].dirty || form.controls['price'].touched)" class="alert alert-danger" role="alert">
+                <div *ngIf="form.controls['price'].errors['required']">
+                    Debe ingresar una Cantidad Disponible.
+                </div>
+            </div>
+            <div *ngIf="form.controls['price'].invalid && (form.controls['price'].dirty || form.controls['price'].touched)" class="alert alert-danger" role="alert">
+                <div *ngIf="form.controls['price'].errors['pattern']">
+                    Debe ingresar un número válido
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <button class="btn btn-primary mt-3" type="submit" value="" (click)="create()" [disabled]="form.invalid || loading">
+                <div *ngIf="!loading">
+                    Crear
+                </div>
+                <div *ngIf="loading" class="spinner-border text-light" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </button>
+        </div>
+    </form>
+</section>

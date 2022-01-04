@@ -1,0 +1,33 @@
+<section class="container">
+    <div class="card">
+        <div class="row">
+            <div class="col-3 header">
+                Nombre
+            </div>
+            <div class="col-3 header">
+                Dirección
+            </div>
+            <div class="col-3 header">
+                Teléfono
+            </div>
+            <div class="col-3 header">
+                Tipo de calzado
+            </div>
+        </div>
+        <div *ngFor="let supp of list" class="row">
+            <div class="col-3 info">
+                {{supp.name}}
+            </div>
+            <div class="col-3 info">
+                {{supp.adress}}
+            </div>
+            <div class="col-3 info">
+                {{supp.phone}}
+            </div>
+            <div class="col-3 info">
+                {{supp.shoesType}}
+            </div>
+        </div>
+
+    </div>
+</section>
